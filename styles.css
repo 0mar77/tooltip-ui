@@ -20,11 +20,31 @@ li {
     position: relative;
 }
 
-#projects:hover::before {
-    position: absolute;
-    top: -.25rem;
-    height: 25px;
-    width: 25px;
-    background: black;
-    /* content: attr(data-tooltip) */
+.dot {
+    color:lightgrey
 }
+
+#projects::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 0px;
+    right: -25px;
+    width: max-content;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 5px 10px;
+    border-radius: 12px;
+    clip-path: circle(0rem at center);
+    overflow: hidden;
+    transition: 300ms all ease-in;
+}
+
+#projects:hover::before {
+    clip-path: circle(20rem at center); 
+    top: -10%;
+}
+
+
